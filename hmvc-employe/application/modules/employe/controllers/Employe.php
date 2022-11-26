@@ -12,23 +12,21 @@ class Employe extends MX_Controller
 
 
     function index()
-    {     
+    {
         $this->load->helper(array('form', 'url'));
-        $this->load->library('form_validation');  
+        $this->load->library('form_validation');
 
-            $this->form_validation->set_rules('EMPLOYENAME', 'EMPLOYENAME', 'required|alpha');
-            $this->form_validation->set_rules('EMPLOYEID', 'EMPLOYEID', 'required|integer');
-            $this->form_validation->set_rules('EMPLOYEMAIL', 'EMPLOYEMAIL', 'required|alpha');
+        $this->form_validation->set_rules('EMPLOYENAME', 'EMPLOYENAME', 'required|alpha');
+        $this->form_validation->set_rules('EMPLOYEID', 'EMPLOYEID', 'required|integer');
+        $this->form_validation->set_rules('EMPLOYEMAIL', 'EMPLOYEMAIL', 'required|alpha');
 
-            if ($this->form_validation->run() == FALSE) {
-                $row =  $this->employe_model->getData();
-                $data['row'] = $row;
-                $this->load->view('employeview', $data);
-               
-            } else {
-                echo 'posted';
-            }
-
+        if ($this->form_validation->run() == FALSE) {
+            $row =  $this->employe_model->getData();
+            $data['row'] = $row;
+            $this->load->view('employeview', $data);
+        } else {
+            echo 'posted';
+        }
     }
 
     function show()
