@@ -23,7 +23,7 @@
 
             <div class="col-md-4 form-group">
                 <lable>Employe Email</lable>
-                <input type="mail" class="form-control" name="EMPLOYEMAIL" id="employemail" value="<?php if (!empty($col)) echo $col->EMPLOYEMAIL; ?>" />
+                <input type="email" class="form-control" name="EMPLOYEMAIL" id="employemail" value="<?php if (!empty($col)) echo $col->EMPLOYEMAIL; ?>" />
                 <p class="email"></p>
             </div>
 
